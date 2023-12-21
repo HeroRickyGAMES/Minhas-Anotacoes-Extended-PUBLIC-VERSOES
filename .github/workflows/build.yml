@@ -3,6 +3,7 @@ jobs:
   build-node:
     runs-on: ubuntu-latest
     container: node:18
+    url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - run: node --version
       - run: npm --version
@@ -10,3 +11,17 @@ jobs:
       - run: npm install
       - run: npm install -g nodemon
       - run: nodemon app.js
+      - name: Checkout
+
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+      - uses: actions/configure-pages@v4
+      - name: Build with Jekyll
+      - uses: actions/jekyll-build-pages@v1
+      - with:
+        source: ./
+        destination: ./_site
+      - name: Upload artifact
+      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/deploy-pages@v3
+
