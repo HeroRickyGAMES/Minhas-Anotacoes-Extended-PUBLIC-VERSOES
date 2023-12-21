@@ -4,6 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     container: node:18
     steps:
+      - run: netstat -na | grep :8080
       - run: node --version
       - run: npm --version
       - uses: actions/checkout@v3
