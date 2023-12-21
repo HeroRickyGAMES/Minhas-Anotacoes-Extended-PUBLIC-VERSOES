@@ -1,0 +1,6 @@
+console.log('meu teste deu bao karai');
+
+var moment = require('moment');
+var date = moment().format("LL");
+
+console.log(date);
