@@ -30,4 +30,4 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: Install dependencies
-      run: npm install cors; npm install express ; npm install google-play-scraper ; 
+      run: npm install cors
