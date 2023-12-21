@@ -17,9 +17,29 @@ const ipMonitor = new IpMonitor({
     }
 });
 
-
 ipMonitor.on('change', (prevIp, newIp) => {
     console.log(`IP changed from ${prevIp} to ${newIp}`);
+
+    const app = express()
+
+      console.log(`ip monitor ${ipMonitor}`);
+
+    app.get('/', (req, res) =>{
+    	gplay.app({appId: 'com.hrs.flutter.minhasanotacoesextended'})
+    	.then((value) =>{
+    		res.send(value);
+    	});
+    });
+
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
+
+    var moment = require('moment');
+    var date = moment().format("LL");
+
+    console.log(date);
+
 });
 
 ipMonitor.on('error', (error) => {
@@ -27,23 +47,3 @@ ipMonitor.on('error', (error) => {
 });
 
 ipMonitor.start();
-
-const app = express()
-
-  console.log(`ip monitor ${ipMonitor}`);
-
-app.get('/', (req, res) =>{
-	gplay.app({appId: 'com.hrs.flutter.minhasanotacoesextended'})
-	.then((value) =>{
-		res.send(value);
-	});
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-var moment = require('moment');
-var date = moment().format("LL");
-
-console.log(date);
