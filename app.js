@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require('cors');
 const getIP = require('external-ip')();
 const extIP = require('external-ip');
-const port = 3000
+const port = 8080
 console.log('meu teste deu bao karai');
 
 const app = express()
