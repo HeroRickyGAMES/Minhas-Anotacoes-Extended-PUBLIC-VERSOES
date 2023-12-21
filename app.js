@@ -21,7 +21,7 @@ const ipMonitor = new IpMonitor({
     externalIp: {
         timeout: 1000,
         getIP: 'parallel',
-        services: ['http://ifconfig.co/x-real-ip', 'http://icanhazip.com/'],
+        services: ['http://icanhazip.com/'],
         replace: true,
         verbose: true
     }
