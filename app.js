@@ -2,6 +2,7 @@ var gplay = require('google-play-scraper');
 const express = require("express");
 const cors = require('cors');
 const getIP = require('external-ip')();
+const extIP = require('external-ip');
 const port = 3000
 console.log('meu teste deu bao karai');
 
@@ -23,6 +24,8 @@ let getIP = extIP({
     getIP: 'parallel',
     userAgent: 'Chrome 15.0.874 / Mac OS X 10.8.1'
 });
+
+console.log(getIP);
 
 getIP((err, ip) => {
     if (err) {
