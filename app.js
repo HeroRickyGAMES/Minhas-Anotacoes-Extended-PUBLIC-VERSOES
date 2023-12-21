@@ -7,14 +7,6 @@ const IpMonitor = require('ip-monitor');
 
 const app = express()
 
-app.get('/', (req, res) =>{
-	gplay.app({appId: 'com.hrs.flutter.minhasanotacoesextended'})
-	.then((value) =>{
-		res.send(value);
-	});
-});
-
-app.listen(port, () => {
 const ipMonitor = new IpMonitor({
     pollingInterval: 36000,
     verbose: true,
@@ -39,6 +31,15 @@ ipMonitor.on('error', (error) => {
 ipMonitor.start();
 
   console.log(`ip monitor ${ipMonitor}`);
+
+app.get('/', (req, res) =>{
+	gplay.app({appId: 'com.hrs.flutter.minhasanotacoesextended'})
+	.then((value) =>{
+		res.send(value);
+	});
+});
+
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
