@@ -8,6 +8,7 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v3
       - run: npm install
+      - run: sudo apt-get update -y
       - run: apt install net-tools -y
       - run: ifconfig
       - run: node app.js
