@@ -25,7 +25,7 @@ let getIP = extIP({
     userAgent: 'Chrome 15.0.874 / Mac OS X 10.8.1'
 });
 
-console.log(getIP);
+console.log(`ip used $getIP`);
 
 getIP((err, ip) => {
     if (err) {
