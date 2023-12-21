@@ -3,9 +3,7 @@ const express = require("express");
 const cors = require('cors');
 const port = 3000
 console.log('meu teste deu bao karai');
-
-var os = require("os");
-var host = os.hostname();
+var request = request.headers.host;
 
 const app = express()
 
@@ -19,7 +17,7 @@ app.get('/', (req, res) =>{
 });
 
 app.listen(port, () => {
-  console.log(`host ${host}`);
+  console.log(request);
   console.log(`Example app listening on port ${port}`)
 })
 
