@@ -5,8 +5,6 @@ const port = 8080
 console.log('meu teste deu bao karai');
 const IpMonitor = require('ip-monitor');
 
-const app = express()
-
 const ipMonitor = new IpMonitor({
     pollingInterval: 36000,
     verbose: true,
@@ -29,6 +27,8 @@ ipMonitor.on('error', (error) => {
 });
 
 ipMonitor.start();
+
+const app = express()
 
   console.log(`ip monitor ${ipMonitor}`);
 
