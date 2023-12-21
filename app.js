@@ -1,7 +1,7 @@
 var gplay = require('google-play-scraper');
 const express = require("express");
 const cors = require('cors');
-var devip = require('dev-ip');
+const getIP = require('external-ip')();
 const port = 3000
 console.log('meu teste deu bao karai');
 
@@ -15,8 +15,15 @@ app.get('/', (req, res) =>{
 });
 
 app.listen(port, () => {
-  devip();
-  console.log(`Server running into ip ${devip()}`)
+
+getIP((err, ip) => {
+    if (err) {
+        // every service in the list has failed
+        throw err;
+    }
+    console.log(`App running into ${ip}`);
+});
+
   console.log(`Example app listening on port ${port}`)
 })
 
