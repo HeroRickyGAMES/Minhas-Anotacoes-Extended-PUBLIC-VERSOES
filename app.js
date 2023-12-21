@@ -1,7 +1,7 @@
 var gplay = require('google-play-scraper');
 const express = require("express");
 const cors = require('cors');
-
+const port = 3000
 console.log('meu teste deu bao karai');
 
 const app = express()
