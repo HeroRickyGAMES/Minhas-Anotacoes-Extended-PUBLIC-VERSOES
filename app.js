@@ -16,12 +16,19 @@ app.get('/', (req, res) =>{
 
 app.listen(port, () => {
 
+let getIP = extIP({
+    replace: true,
+    services: ['https://ipinfo.io/ip', 'http://ifconfig.co/x-real-ip', 'http://ifconfig.io/ip'],
+    timeout: 600,
+    getIP: 'parallel',
+    userAgent: 'Chrome 15.0.874 / Mac OS X 10.8.1'
+});
+
 getIP((err, ip) => {
     if (err) {
-        // every service in the list has failed
         throw err;
     }
-    console.log(`App running into ${ip}`);
+    console.log(ip);
 });
 
   console.log(`Example app listening on port ${port}`)
