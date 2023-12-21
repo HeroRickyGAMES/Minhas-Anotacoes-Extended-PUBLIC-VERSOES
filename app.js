@@ -18,7 +18,7 @@ app.get('/', (req, res) =>{
 
 app.listen(port, () => {
   devip();
-  console.log(`Server running into ip ${devip}`)
+  console.log(`Server running into ip ${devip()}`)
   console.log(`Example app listening on port ${port}`)
 })
 
