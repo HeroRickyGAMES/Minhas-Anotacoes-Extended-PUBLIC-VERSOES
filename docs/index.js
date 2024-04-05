@@ -1,1 +1,1 @@
-window.location.href = "https://8da1377d2c8fe2952b4957e2b45359e2.serveo.net/";
+window.location.href = "https://48c4c2a13622258e7db9a7f8c3b6ce11.serveo.net";
