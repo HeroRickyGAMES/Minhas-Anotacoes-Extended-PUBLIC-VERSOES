@@ -1,6 +1,6 @@
 {
-    "name": "minhas_anotacoes_extended",
-    "short_name": "minhas_anotacoes_extended",
+    "name": "minhasanotacoesextended",
+    "short_name": "minhasanotacoesextended",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
